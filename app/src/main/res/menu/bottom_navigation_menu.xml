@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/navigation_recent"
-        android:icon="@drawable/ic_recent"
-        android:title="@string/recents" />
 
     <item
-        android:id="@+id/navigation_favorites"
-        android:icon="@drawable/ic_favorites"
-        android:title="@string/favorites" />
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/title_home"/>
 
     <item
-        android:id="@+id/navigation_nearby"
-        android:icon="@drawable/ic_nearby"
-        android:title="@string/nearby" />
+        android:id="@+id/navigation_category"
+        android:icon="@drawable/ic_category"
+        android:title="@string/title_category"/>
 
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="@string/title_notifications"/>
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_person"
+        android:title="@string/title_profile"/>
 </menu>
