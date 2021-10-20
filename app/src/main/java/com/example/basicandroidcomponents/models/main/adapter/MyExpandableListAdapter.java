@@ -20,11 +20,9 @@ import java.util.Objects;
 
 public class MyExpandableListAdapter extends BaseExpandableListAdapter {
 
-    //region property
+    //region Variables
     private Context context;
-    //child list
     private Map<String, List<String>> mobileCollection;
-    //main list
     private List<String> groupList;
     //endregion
 
@@ -83,7 +81,6 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
         return view;
     }
 
-    //kif r7 yn3rdo el child
     @Override
     public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
         String model = getChild(i, i1).toString();

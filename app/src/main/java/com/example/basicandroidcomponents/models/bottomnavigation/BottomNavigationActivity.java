@@ -26,7 +26,8 @@ public class BottomNavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //region Find view by id
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_botom_navigation);
+
         bottomNavigation = findViewById(R.id.bottom_navigation_bottom_navigation);
         mainViewPager = findViewById(R.id.bottom_navigation_view_pager);
         //endregion
