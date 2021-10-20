@@ -1,4 +1,4 @@
-package com.example.basicandroidcomponents.Fragment;
+package com.example.basicandroidcomponents.models.bottomnavigation.Fragment;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

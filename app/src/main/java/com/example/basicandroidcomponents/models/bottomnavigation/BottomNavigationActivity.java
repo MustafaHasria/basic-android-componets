@@ -1,15 +1,16 @@
-package com.example.basicandroidcomponents;
-
-import android.os.Bundle;
+package com.example.basicandroidcomponents.models.bottomnavigation;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.basicandroidcomponents.Fragment.ViewPagerAdapter;
+import android.os.Bundle;
+
+import com.example.basicandroidcomponents.R;
+import com.example.basicandroidcomponents.models.bottomnavigation.Fragment.ViewPagerAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class BottomNavigationActivity extends AppCompatActivity {
     //region Components
     private ViewPager mainViewPager;
     private BottomNavigationView bottomNavigation;
@@ -26,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         //region Find view by id
         setContentView(R.layout.activity_main);
-        bottomNavigation = findViewById(R.id.main_bottom_navigation);
-        mainViewPager = findViewById(R.id.main_view_pager);
+        bottomNavigation = findViewById(R.id.bottom_navigation_bottom_navigation);
+        mainViewPager = findViewById(R.id.bottom_navigation_view_pager);
         //endregion
 
         setupViewPager();

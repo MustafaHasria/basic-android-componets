@@ -1,4 +1,4 @@
-package com.example.basicandroidcomponents.Fragment;
+package com.example.basicandroidcomponents.models.bottomnavigation.Fragment;
 
 import android.os.Bundle;
 
@@ -10,18 +10,19 @@ import android.view.ViewGroup;
 
 import com.example.basicandroidcomponents.R;
 
-public class ProfileFragment extends Fragment {
+
+public class NotificationFragment extends Fragment {
 
 
-    public ProfileFragment() {
+
+    public NotificationFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        return inflater.inflate(R.layout.fragment_notification, container, false);
     }
 }
