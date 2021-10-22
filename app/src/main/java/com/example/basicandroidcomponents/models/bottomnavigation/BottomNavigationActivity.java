@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.basicandroidcomponents.R;
 import com.example.basicandroidcomponents.models.bottomnavigation.Fragment.ViewPagerAdapter;
+import com.example.basicandroidcomponents.models.bottomnavigation.animationviewpager.ZoomOutPageTransformer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BottomNavigationActivity extends AppCompatActivity {
@@ -30,6 +31,7 @@ public class BottomNavigationActivity extends AppCompatActivity {
 
         bottomNavigation = findViewById(R.id.bottom_navigation_bottom_navigation);
         mainViewPager = findViewById(R.id.bottom_navigation_view_pager);
+        mainViewPager.setPageTransformer(true,new ZoomOutPageTransformer());
         //endregion
 
         setupViewPager();
