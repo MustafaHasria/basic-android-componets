@@ -12,10 +12,10 @@
         android:layout_weight="1"
         android:text="Hello" />
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/child_item_favourite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_empty_star"
-        android:contentDescription="@string/app_name" />
+        android:contentDescription="@string/app_name" /> -->
 </LinearLayout>

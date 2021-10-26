@@ -8,9 +8,10 @@
     tools:context=".MainActivity">
 
     <ExpandableListView
-        android:id="@+id/elvMobiles"
+        android:id="@+id/main_expandable"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:indicatorLeft="@dimen/my_value">
     </ExpandableListView>
 
 </LinearLayout >

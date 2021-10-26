@@ -6,4 +6,13 @@
     <string name="title_profile">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--for bottom sheet dialog-->
+    <string name="bottom_sheet_dialog_basic">Bottom Sheet Dialog Basic</string>
+    <string name="shopping_and_put_in_shopping_bag">Shopping And Put In Shopping Bag</string>
+    <string name="_4500_sp">4500 sp</string>
+    <string name="al_mogambo_summakia_street">Al Mogambo _ Summakia Street</string>
+    <string name="buy">Buy</string>
+    <string name="show_information_about_product">Show Information About Product</string>
+    <string name="free_delivery">Free Delivery</string>
 </resources>

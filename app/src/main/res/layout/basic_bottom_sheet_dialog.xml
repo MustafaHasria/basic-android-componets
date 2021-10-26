@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_dialog_linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_background">
+
+    <TextView
+        android:id="@+id/bottom_sheet_dialog_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bottom_sheet_dialog_basic"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryText"
+        android:padding="15dp">
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider"
+        android:layout_marginTop="5dp">
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:riv_corner_radius="50dp"
+            android:src="@drawable/bag"
+            app:riv_border_color="#333333"
+            app:riv_mutate_background="true"
+            app:riv_oval="true">
+        </com.makeramen.roundedimageview.RoundedImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shopping_and_put_in_shopping_bag"
+                android:textSize="17sp"
+                android:textColor="@color/colorPrimaryText"
+                android:fontFamily="bold">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/free_delivery"
+                android:textSize="15sp"
+                android:textColor="@color/colorSecondaryText">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/_4500_sp"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:fontFamily="bold">
+            </TextView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorDivider">
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_location"
+            app:riv_corner_radius="30dip"
+            >
+        </com.makeramen.roundedimageview.RoundedImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="25dp"
+            android:text="@string/al_mogambo_summakia_street"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="15sp">
+        </TextView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bottom_sheet_dialog_button"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/button_background"
+        android:text="@string/buy"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginBottom="20sp"
+        android:textColor="@color/white"
+        android:textSize="18sp">
+    </Button>
+
+</LinearLayout>

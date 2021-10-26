@@ -2,21 +2,13 @@ package com.example.basicandroidcomponents.models.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
-import com.example.basicandroidcomponents.R;
+import com.example.basicandroidcomponents.databinding.ActivityMainBinding;
 import com.example.basicandroidcomponents.models.bottomnavigation.BottomNavigationActivity;
-import com.example.basicandroidcomponents.models.bottomnavigation.Fragment.ViewPagerAdapter;
+import com.example.basicandroidcomponents.models.bottomsheetdialog.BasicBottomSheetDialog;
 import com.example.basicandroidcomponents.models.main.adapter.MyExpandableListAdapter;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -26,7 +18,8 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     //region Components
-    ExpandableListView expandableListView;
+    ActivityMainBinding binding;
+    ExpandableListView mainExpandable;
     //endregion
 
     //region Variables
@@ -41,31 +34,36 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding= ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        expandableListView = findViewById(R.id.elvMobiles);
+       // expandableListView = findViewById(R.id.elvMobiles);
 
         createGroupList();
         createCollection();
         expandableListAdapter = new MyExpandableListAdapter(this, mobileCollection, groupList);
-        expandableListView.setAdapter(expandableListAdapter);
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+        binding.mainExpandable.setAdapter(expandableListAdapter);
+        binding.mainExpandable.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
             int lastExpandedPosition = -1;
 
             @Override
             public void onGroupExpand(int i) {
                 if (lastExpandedPosition != -1 && i != lastExpandedPosition) {
-                    expandableListView.collapseGroup(lastExpandedPosition);
+                    binding.mainExpandable.collapseGroup(lastExpandedPosition);
                 }
                 lastExpandedPosition = i;
             }
         });
-        expandableListView.setOnChildClickListener((expandableListView, view, i, i1, l) -> {
+        binding.mainExpandable.setOnChildClickListener((expandableListView, view, i, i1, l) -> {
             String selected = expandableListAdapter.getChild(i, i1).toString();
-            switch (selected) {
-                case "Basic":
-                    Intent intent = new Intent(this, BottomNavigationActivity.class);
-                    startActivity(intent);
+            if ("Basic Bottom Navigation Activity".equals(selected)) {
+                Intent intent = new Intent(this, BottomNavigationActivity.class);
+                startActivity(intent);
+            }
+            else if ("Basic Bottom Sheet Dialog".equals(selected))
+            {
+                Intent intent = new Intent(this, BasicBottomSheetDialog.class);
+                startActivity(intent);
             }
             return true;
         });
@@ -75,12 +73,17 @@ public class MainActivity extends AppCompatActivity {
 
     //region methods
     private void createCollection() {
-        String[] bottomNavigationSub = {"Basic"};
-        mobileCollection = new HashMap<String, List<String>>();
+        String[] bottomNavigationSub = {"Basic Bottom Navigation Activity"};
+        String[] bottomSheetSub = {"Basic Bottom Sheet Dialog"};
+        mobileCollection = new HashMap<>();
 
         for (String group : groupList) {
             if (group.equals("Bottom Navigation")) {
                 loadChild(bottomNavigationSub);
+            }
+            else if (group.equals("Bottom Sheet"))
+            {
+                loadChild(bottomSheetSub);
             }
             mobileCollection.put(group, childList);
         }
@@ -99,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     private void createGroupList() {
         groupList = new ArrayList<>();
         groupList.add("Bottom Navigation");
+        groupList.add("Bottom Sheet");
     }
     //endregion
 }

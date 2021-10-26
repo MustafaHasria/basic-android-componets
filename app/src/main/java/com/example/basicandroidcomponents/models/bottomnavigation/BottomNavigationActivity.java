@@ -7,12 +7,14 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.example.basicandroidcomponents.R;
+import com.example.basicandroidcomponents.databinding.ActivityBotomNavigationBinding;
 import com.example.basicandroidcomponents.models.bottomnavigation.Fragment.ViewPagerAdapter;
 import com.example.basicandroidcomponents.models.bottomnavigation.animationviewpager.ZoomOutPageTransformer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BottomNavigationActivity extends AppCompatActivity {
     //region Components
+    ActivityBotomNavigationBinding binding;
     private ViewPager mainViewPager;
     private BottomNavigationView bottomNavigation;
     //endregion
@@ -25,18 +27,18 @@ public class BottomNavigationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        binding= ActivityBotomNavigationBinding.inflate(getLayoutInflater());
         //region Find view by id
-        setContentView(R.layout.activity_botom_navigation);
+        setContentView(binding.getRoot());
 
-        bottomNavigation = findViewById(R.id.bottom_navigation_bottom_navigation);
-        mainViewPager = findViewById(R.id.bottom_navigation_view_pager);
-        mainViewPager.setPageTransformer(true,new ZoomOutPageTransformer());
+//        bottomNavigation = findViewById(R.id.bottom_navigation_bottom_navigation);
+//        mainViewPager = findViewById(R.id.bottom_navigation_view_pager);
+
+        binding.bottomNavigationViewPager.setPageTransformer(true,new ZoomOutPageTransformer());
         //endregion
-
         setupViewPager();
 
-        mainViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        binding.bottomNavigationViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -47,16 +49,16 @@ public class BottomNavigationActivity extends AppCompatActivity {
 
                 switch (position) {
                     case 0:
-                        bottomNavigation.getMenu().findItem(R.id.navigation_home).setChecked(true);
+                        binding.bottomNavigationBottomNavigation.getMenu().findItem(R.id.navigation_home).setChecked(true);
                         break;
                     case 1:
-                        bottomNavigation.getMenu().findItem(R.id.navigation_category).setChecked(true);
+                        binding.bottomNavigationBottomNavigation.getMenu().findItem(R.id.navigation_category).setChecked(true);
                         break;
                     case 2:
-                        bottomNavigation.getMenu().findItem(R.id.navigation_notifications).setChecked(true);
+                        binding.bottomNavigationBottomNavigation.getMenu().findItem(R.id.navigation_notifications).setChecked(true);
                         break;
                     case 3:
-                        bottomNavigation.getMenu().findItem(R.id.navigation_profile).setChecked(true);
+                        binding.bottomNavigationBottomNavigation.getMenu().findItem(R.id.navigation_profile).setChecked(true);
                         break;
                 }
             }
@@ -67,19 +69,19 @@ public class BottomNavigationActivity extends AppCompatActivity {
             }
         });
 
-        bottomNavigation.setOnItemSelectedListener(item -> {
+        binding.bottomNavigationBottomNavigation.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mainViewPager.setCurrentItem(0);
+                    binding.bottomNavigationViewPager.setCurrentItem(0);
                     break;
                 case R.id.navigation_category:
-                    mainViewPager.setCurrentItem(1);
+                    binding.bottomNavigationViewPager.setCurrentItem(1);
                     break;
                 case R.id.navigation_notifications:
-                    mainViewPager.setCurrentItem(2);
+                    binding.bottomNavigationViewPager.setCurrentItem(2);
                     break;
                 case R.id.navigation_profile:
-                    mainViewPager.setCurrentItem(3);
+                    binding.bottomNavigationViewPager.setCurrentItem(3);
                     break;
             }
             return true;
@@ -90,7 +92,7 @@ public class BottomNavigationActivity extends AppCompatActivity {
     //region Setups
     private void setupViewPager() {
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        mainViewPager.setAdapter(viewPagerAdapter);
+        binding.bottomNavigationViewPager.setAdapter(viewPagerAdapter);
     }
     //endregion
 }

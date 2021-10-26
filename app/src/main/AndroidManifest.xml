@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BasicAndroidComponents">
         <activity
+            android:name=".models.bottomsheetdialog.BasicBottomSheetDialog"
+            android:exported="true" />
+        <activity
             android:name=".models.bottomnavigation.BottomNavigationActivity"
             android:exported="true" />
         <activity

@@ -10,6 +10,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/mobile"
         android:paddingStart="50dp"
-        android:text="" />
+        android:text=""
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimaryDark"/>
 
 </LinearLayout>
