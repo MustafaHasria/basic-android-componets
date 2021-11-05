@@ -10,6 +10,8 @@ import com.example.basicandroidcomponents.models.bottomnavigation.BottomNavigati
 import com.example.basicandroidcomponents.models.bottomsheetdialog.BasicBottomSheetDialog;
 import com.example.basicandroidcomponents.models.bottomsheetdialog.MapModernBottomSheetDialog;
 import com.example.basicandroidcomponents.models.main.adapter.MyExpandableListAdapter;
+import com.example.basicandroidcomponents.models.steppers.MainActivitySteppers;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -72,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, MapModernBottomSheetDialog.class);
                 startActivity(intent);
             }
+            else if ("Wizard Color".equals(selected))
+            {
+                Intent intent = new Intent(this, MainActivitySteppers.class);
+                startActivity(intent);
+            }
             return true;
         });
     }
@@ -83,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         String[] bottomNavigationSub = {"Basic Bottom Navigation Activity"};
         String[] bottomSheetSub = {"Basic Bottom Sheet Dialog","Map Bottom Sheet Dialog"};
         //String[] bottomSheetSub2 = {"Map Bottom Sheet Dialog"};
+        String[] steppersSub = {"Wizard Color"};
         mobileCollection = new HashMap<>();
 
         for (String group : groupList) {
@@ -92,6 +100,10 @@ public class MainActivity extends AppCompatActivity {
             else if (group.equals("Bottom Sheet"))
             {
                 loadChild(bottomSheetSub);
+            }
+            else if (group.equals("Steppers"))
+            {
+                loadChild(steppersSub);
             }
 
             mobileCollection.put(group, childList);
@@ -112,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         groupList = new ArrayList<>();
         groupList.add("Bottom Navigation");
         groupList.add("Bottom Sheet");
+        groupList.add("Steppers");
     }
     //endregion
 }

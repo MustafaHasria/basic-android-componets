@@ -64,12 +64,11 @@
             android:id="@+id/animation_view2"
             android:layout_width="100dp"
             android:layout_height="90dp"
-            app:lottie_url="REPLACE_JSON_URL"
+            android:layout_centerHorizontal="true"
             app:lottie_autoPlay="true"
-            app:lottie_rawRes="@raw/sad"
             app:lottie_loop="true"
-            android:layout_centerHorizontal="true">
-        </com.airbnb.lottie.LottieAnimationView>
+            app:lottie_rawRes="@raw/sad"
+            app:lottie_url="REPLACE_JSON_URL"/>
     </RelativeLayout>
 
 </RelativeLayout>
