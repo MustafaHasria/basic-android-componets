@@ -34,6 +34,7 @@ public class BottomNavigationActivity extends AppCompatActivity {
 //        bottomNavigation = findViewById(R.id.bottom_navigation_bottom_navigation);
 //        mainViewPager = findViewById(R.id.bottom_navigation_view_pager);
 
+        //animation
         binding.bottomNavigationViewPager.setPageTransformer(true,new ZoomOutPageTransformer());
         //endregion
         setupViewPager();

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.basicandroidcomponents.databinding.ActivityMainBinding;
 import com.example.basicandroidcomponents.models.bottomnavigation.BottomNavigationActivity;
 import com.example.basicandroidcomponents.models.bottomsheetdialog.BasicBottomSheetDialog;
+import com.example.basicandroidcomponents.models.bottomsheetdialog.MapModernBottomSheetDialog;
 import com.example.basicandroidcomponents.models.main.adapter.MyExpandableListAdapter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         });
         binding.mainExpandable.setOnChildClickListener((expandableListView, view, i, i1, l) -> {
             String selected = expandableListAdapter.getChild(i, i1).toString();
+
             if ("Basic Bottom Navigation Activity".equals(selected)) {
                 Intent intent = new Intent(this, BottomNavigationActivity.class);
                 startActivity(intent);
@@ -63,6 +65,11 @@ public class MainActivity extends AppCompatActivity {
             else if ("Basic Bottom Sheet Dialog".equals(selected))
             {
                 Intent intent = new Intent(this, BasicBottomSheetDialog.class);
+                startActivity(intent);
+            }
+            else if ("Map Bottom Sheet Dialog".equals(selected))
+            {
+                Intent intent = new Intent(this, MapModernBottomSheetDialog.class);
                 startActivity(intent);
             }
             return true;
@@ -74,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
     //region methods
     private void createCollection() {
         String[] bottomNavigationSub = {"Basic Bottom Navigation Activity"};
-        String[] bottomSheetSub = {"Basic Bottom Sheet Dialog"};
+        String[] bottomSheetSub = {"Basic Bottom Sheet Dialog","Map Bottom Sheet Dialog"};
+        //String[] bottomSheetSub2 = {"Map Bottom Sheet Dialog"};
         mobileCollection = new HashMap<>();
 
         for (String group : groupList) {
@@ -85,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 loadChild(bottomSheetSub);
             }
+
             mobileCollection.put(group, childList);
         }
     }
