@@ -19,6 +19,9 @@
             android:name=".models.bottomsheetdialog.BasicBottomSheetDialog"
             android:exported="true" />
         <activity
+            android:name=".models.bottomsheetdialog.MapModernBottomSheetDialog"
+            android:exported="true" />
+        <activity
             android:name=".models.bottomnavigation.BottomNavigationActivity"
             android:exported="true" />
         <activity
