@@ -15,9 +15,10 @@ import com.example.basicandroidcomponents.R;
 
 public class ViewPagerAdapter extends PagerAdapter {
 
+    //region Variables
     Context context;
 
-    int images[] = {
+    int[] images = {
 
             R.drawable.steppers_image_1,
             R.drawable.steppers_image_2,
@@ -26,7 +27,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     };
 
-    int headings[] = {
+    int[] headings = {
 
             R.string.heading_one,
             R.string.heading_two,
@@ -34,23 +35,26 @@ public class ViewPagerAdapter extends PagerAdapter {
             R.string.heading_fourth
     };
 
-    int description[] = {
+    int[] description = {
 
-      R.string.desc_one,
-      R.string.desc_two,
-      R.string.desc_three,
-      R.string.desc_fourth
+            R.string.desc_one,
+            R.string.desc_two,
+            R.string.desc_three,
+            R.string.desc_fourth
     };
 
-    public ViewPagerAdapter(Context context){
+    //endregion
 
+    //region Constructor
+    public ViewPagerAdapter(Context context) {
         this.context = context;
-
     }
+    //endregion
 
+    //region Methods
     @Override
     public int getCount() {
-        return  headings.length;
+        return headings.length;
     }
 
     @Override
@@ -63,7 +67,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.steppers_slider_for_view_pager,container,false);
+        View view = layoutInflater.inflate(R.layout.steppers_slider_for_view_pager, container, false);
 
         ImageView steppersSliderForViewPagerImageView = (ImageView) view.findViewById(R.id.steppers_slider_for_view_pager_image_view);
         TextView steppersSliderForViewPagerTextViewTitle = (TextView) view.findViewById(R.id.steppers_slider_for_view_pager_text_view_title);
@@ -82,7 +86,8 @@ public class ViewPagerAdapter extends PagerAdapter {
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
 
-        container.removeView((LinearLayout)object);
+        container.removeView((LinearLayout) object);
 
     }
+    //endregion
 }

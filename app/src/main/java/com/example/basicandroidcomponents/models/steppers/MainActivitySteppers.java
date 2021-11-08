@@ -14,7 +14,7 @@ import com.example.basicandroidcomponents.databinding.ActivityMainSteppersBindin
 
 public class MainActivitySteppers extends AppCompatActivity {
 
-    //region component
+    //region Components
     ActivityMainSteppersBinding binding;
     TextView[] dots;
     //endregion
@@ -23,8 +23,7 @@ public class MainActivitySteppers extends AppCompatActivity {
     ViewPagerAdapter viewPagerAdapter;
     //endregion
 
-
-    //region life cycle
+    //region Life cycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,46 +32,43 @@ public class MainActivitySteppers extends AppCompatActivity {
 
         binding.activityMainSteppersButtonBack.setOnClickListener(v -> {
 
-            if (getitem(0) > 0){
+            if (getItem(0) > 0){
 
-                binding.activityMainSteppersViewPagerSlide.setCurrentItem(getitem(-1),true);
+                binding.activityMainSteppersViewPagerSlide.setCurrentItem(getItem(-1),true);
             }
 
         });
 
         binding.activityMainSteppersButtonNext.setOnClickListener(v -> {
 
-            if (getitem(0) < 3)
-                binding.activityMainSteppersViewPagerSlide.setCurrentItem(getitem(1),true);
-            else {
+            if (getItem(0) < 3)
+                binding.activityMainSteppersViewPagerSlide.setCurrentItem(getItem(1),true);
 
+            else {
                 Intent i = new Intent(MainActivitySteppers.this,MainScreen.class);
                 startActivity(i);
                 finish();
-
             }
 
         });
 
         binding.activityMainSteppersButtonSkip.setOnClickListener(v -> {
-
-
             Intent i = new Intent(MainActivitySteppers.this,MainScreen.class);
             startActivity(i);
             finish();
-
         });
 
 
         viewPagerAdapter = new ViewPagerAdapter(this);
         binding.activityMainSteppersViewPagerSlide.setAdapter(viewPagerAdapter);
 
-        setUpindicator(0);
+        setUpIndicator(0);
         binding.activityMainSteppersViewPagerSlide.addOnPageChangeListener(viewListener);
     }
     //endregion
-    //region methods
-    public void setUpindicator(int position){
+
+    //region Methods
+    public void setUpIndicator(int position){
 
         dots = new TextView[4];
         binding.activityMainSteppersLinearLayout.removeAllViews();
@@ -80,6 +76,7 @@ public class MainActivitySteppers extends AppCompatActivity {
         for (int i = 0 ; i < dots.length ; i++){
 
             dots[i] = new TextView(this);
+            //to show dots in main screen
             dots[i].setText(Html.fromHtml("&#8226"));
             dots[i].setTextSize(35);
             dots[i].setTextColor(getResources().getColor(R.color.inactive,getApplicationContext().getTheme()));
@@ -100,7 +97,7 @@ public class MainActivitySteppers extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
 
-            setUpindicator(position);
+            setUpIndicator(position);
 
             if (position > 0)
             {
@@ -109,7 +106,7 @@ public class MainActivitySteppers extends AppCompatActivity {
 
             else
             {
-                binding.activityMainSteppersButtonBack.setVisibility(View.INVISIBLE);
+                binding.activityMainSteppersButtonBack.setVisibility(View.GONE);
             }
 
         }
@@ -121,7 +118,7 @@ public class MainActivitySteppers extends AppCompatActivity {
         }
     };
 
-    private int getitem(int i){
+    private int getItem(int i){
 
         return binding.activityMainSteppersViewPagerSlide.getCurrentItem() + i;
     }

@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     ExpandableListAdapter expandableListAdapter;
     //endregion
 
-
     //region life cycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     //endregion
-
 
     //region methods
     private void createCollection() {

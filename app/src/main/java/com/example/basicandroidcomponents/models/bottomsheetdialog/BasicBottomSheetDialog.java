@@ -17,6 +17,7 @@ public class BasicBottomSheetDialog extends AppCompatActivity {
     ActivityBasicBottomSheetDialogBinding binding;
     Button mainInfoButton;
     //endregion
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
