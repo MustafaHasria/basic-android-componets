@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/item_for_recycler_view_to_fragment_model_card_view"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_width="170dp"
+    android:layout_height="190dp"
+    android:layout_margin="5dp"
+    cardview:cardCornerRadius="6dp"
+    cardview:cardElevation="6dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:focusable="true">
+
+
+    <RelativeLayout
+        android:id="@+id/item_for_recycler_view_to_fragment_model_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="190dp">
+
+
+
+        <ImageView
+            android:id="@+id/item_for_recycler_view_to_fragment_model_image_view_background_picture_profile"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:scaleType="centerCrop"
+            android:background="#2d2d2d"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/todo" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/item_for_recycler_view_to_fragment_model_image_view_picture_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20sp"
+            cardview:riv_corner_radius="35dp"/>
+
+
+        <TextView
+            android:id="@+id/item_for_recycler_view_to_fragment_model_text_view_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/tarek_hendi"
+            android:textColor="#2d2d2d"
+            android:textSize="13sp"
+            android:layout_marginTop="10sp"
+            android:layout_below="@id/item_for_recycler_view_to_fragment_model_image_view_picture_profile" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/item_for_recycler_view_to_fragment_model_button_show_profile"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/item_for_recycler_view_to_fragment_model_text_view_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_background_for_recycler_view_in_fragment_model"
+            android:text="@string/view_profile"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/product_sans_bold"
+            android:layout_marginBottom="6dp"/>
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

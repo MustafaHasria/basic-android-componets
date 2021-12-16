@@ -11,6 +11,9 @@
         android:theme="@style/Theme.BasicAndroidComponents">
 
         <activity
+            android:name=".models.fragment.MainActivityFragment"
+            android:exported="true" />
+        <activity
             android:name=".models.recyclerview.BasicRecyclerViewActivity"
             android:exported="true" />
 

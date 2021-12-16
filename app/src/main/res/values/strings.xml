@@ -57,4 +57,10 @@
         <item>@drawable/losangeles</item>
     </string-array>
 -->
+
+    <string name="view_profile">View Profile</string>
+    <string name="tarek_hendi">TAREK HENDI</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="people_you_may_know_from_aleppo_university">People you may know From Aleppo University</string>
+    <string name="study_at_cordoba_university">Study At Cordoba University</string>
 </resources>

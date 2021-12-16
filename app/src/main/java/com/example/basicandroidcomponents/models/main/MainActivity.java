@@ -13,6 +13,7 @@ import com.example.basicandroidcomponents.databinding.ActivityMainBinding;
 import com.example.basicandroidcomponents.models.bottomnavigation.BottomNavigationActivity;
 import com.example.basicandroidcomponents.models.bottomsheetdialog.BasicBottomSheetDialog;
 import com.example.basicandroidcomponents.models.bottomsheetdialog.MapModernBottomSheetDialog;
+import com.example.basicandroidcomponents.models.fragment.MainActivityFragment;
 import com.example.basicandroidcomponents.models.main.adapter.MyExpandableListAdapter;
 import com.example.basicandroidcomponents.models.recyclerview.BasicRecyclerViewActivity;
 import com.example.basicandroidcomponents.models.recyclerview.RecyclerViewWithAnimationLeftToRightActivity;
@@ -98,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, BasicRecyclerViewActivity.class);
                 startActivity(intent);
             }
+            else if ("Basic Fragments".equals(selected))
+            {
+                Intent intent = new Intent(this, MainActivityFragment.class);
+                startActivity(intent);
+            }
             return true;
         });
     }
@@ -110,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         String[] bottomSheetSub = {"Basic Bottom Sheet Dialog","Map Bottom Sheet Dialog"};
         String[] steppersSub = {"Wizard Color"};
         String[] RecyclerView = {"Animation Left To Right","Basic"};
+        String[] Fragment = {"Basic Fragments"};
         mobileCollection = new HashMap<>();
 
         for (String group : groupList) {
@@ -128,7 +135,10 @@ public class MainActivity extends AppCompatActivity {
             {
                 loadChild(RecyclerView);
             }
-
+            else if (group.equals("Fragment"))
+            {
+                loadChild(Fragment);
+            }
             mobileCollection.put(group, childList);
         }
     }
@@ -149,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
         groupList.add("Bottom Sheet");
         groupList.add("Steppers");
         groupList.add("Recycler View");
+        groupList.add("Fragment");
     }
 
 
