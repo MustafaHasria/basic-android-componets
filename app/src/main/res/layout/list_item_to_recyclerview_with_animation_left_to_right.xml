@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/list_item_to_recyclerview_with_animation_left_to_right_constraint_main_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="8dp">
+
+    <RelativeLayout
+        android:id="@+id/list_item_to_recyclerview_with_animation_left_to_right_relative_layout_container"
+        android:paddingBottom="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:background="@drawable/background_for_recycler_view_item_light_theme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+
+            android:id="@+id/list_item_to_recyclerview_with_animation_left_to_right_text_view_title"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text=""
+            android:textColor="@color/text_color_in_light_theme"
+            android:singleLine="true"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/list_item_to_recyclerview_with_animation_left_to_right_text_view_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_item_to_recyclerview_with_animation_left_to_right_text_view_title"
+            android:layout_alignStart="@+id/list_item_to_recyclerview_with_animation_left_to_right_text_view_title"
+            android:layout_alignLeft="@+id/list_item_to_recyclerview_with_animation_left_to_right_text_view_title"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:lineSpacingExtra="8dp"
+            android:text=""
+            android:singleLine="true"
+            android:textColor="@color/text_color_in_dark_theme" />
+
+        <TextView
+            android:id="@+id/list_item_to_recyclerview_with_animation_left_to_right_text_view_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text=""
+            android:textColor="@color/text_color_in_dark_theme"
+            />
+
+    </RelativeLayout>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/list_item_to_recyclerview_with_animation_left_to_right_image_view"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:riv_corner_radius="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/list_item_to_recyclerview_with_animation_left_to_right_relative_layout_container"
+        app:layout_constraintStart_toStartOf="@+id/list_item_to_recyclerview_with_animation_left_to_right_relative_layout_container"
+        app:layout_constraintTop_toTopOf="@+id/list_item_to_recyclerview_with_animation_left_to_right_relative_layout_container"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

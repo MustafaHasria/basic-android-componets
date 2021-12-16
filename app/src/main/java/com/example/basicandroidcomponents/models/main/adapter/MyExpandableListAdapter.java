@@ -1,14 +1,12 @@
 package com.example.basicandroidcomponents.models.main.adapter;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -25,6 +23,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
     private Map<String, List<String>> mobileCollection;
     private List<String> groupList;
     //endregion
+
 
     public MyExpandableListAdapter(Context context, Map<String, List<String>> mobileCollection, List<String> groupList) {
         this.context = context;
@@ -69,11 +68,10 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
-
         String mobileName = getGroup(i).toString();
         if(view == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.group_item, null);
+            view = inflater.inflate(R.layout.main_screen_expanded_group_item, null);
         }
         TextView item = view.findViewById(R.id.mobile);
         item.setTypeface(null, Typeface.BOLD);
@@ -81,12 +79,13 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
         return view;
     }
 
+
     @Override
     public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
         String model = getChild(i, i1).toString();
         if (view == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.child_item, null);
+            view = inflater.inflate(R.layout.main_screen_expanded_child_item, null);
         }
         TextView item = view.findViewById(R.id.model);
         item.setText(model);

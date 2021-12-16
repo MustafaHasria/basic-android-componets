@@ -7,7 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    //Bottom Navigation
+    <!--Bottom Navigation-->
 
     <color name="grey_3">#f7f7f7</color>
     <color name="grey_5">#f2f2f2</color>
@@ -18,6 +18,19 @@
     <color name="grey_80">#37474F</color>
     <color name="grey_90">#263238</color>
 
+
+    <!-- dark theme -->
+    <color name="background_for_light_theme">#f6f6f6</color>
+    <color name="background_for_dark_theme">#0e0e0e</color>
+    <color name="text_color_in_light_theme">#258bd6</color>
+    <color name="text_color_in_dark_theme">#999da4</color>
+
+
+    <!-- for basic recyclerview-->
+
+    <color name="background_color_to_recycler_view">#f6f6f6</color>
+    <color name="content_text_color">#999da4</color>
+    <color name="view_color">#B8BABD</color>
 
     <!--Material color list from https://material.io/guidelines/style/color.html-->
 

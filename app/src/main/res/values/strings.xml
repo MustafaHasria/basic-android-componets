@@ -47,5 +47,14 @@
     <string name="desc_fourth">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
     <string name="skip">Skip</string>
     <string name="back">Back</string>
+    <string name="todo">TODO</string>
 
+    <!-- for Recyclerview text-->
+    <!--
+    <string-array name="cities_images">
+        <item>@drawable/capetown</item>
+        <item>@drawable/newyork</item>
+        <item>@drawable/losangeles</item>
+    </string-array>
+-->
 </resources>

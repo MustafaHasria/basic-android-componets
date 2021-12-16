@@ -1,15 +1,21 @@
 package com.example.basicandroidcomponents.models.main;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.basicandroidcomponents.databinding.ActivityMainBinding;
 import com.example.basicandroidcomponents.models.bottomnavigation.BottomNavigationActivity;
 import com.example.basicandroidcomponents.models.bottomsheetdialog.BasicBottomSheetDialog;
 import com.example.basicandroidcomponents.models.bottomsheetdialog.MapModernBottomSheetDialog;
 import com.example.basicandroidcomponents.models.main.adapter.MyExpandableListAdapter;
+import com.example.basicandroidcomponents.models.recyclerview.BasicRecyclerViewActivity;
+import com.example.basicandroidcomponents.models.recyclerview.RecyclerViewWithAnimationLeftToRightActivity;
 import com.example.basicandroidcomponents.models.steppers.MainActivitySteppers;
 
 import java.util.ArrayList;
@@ -37,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding= ActivityMainBinding.inflate(getLayoutInflater());
+
+        // let's make this activity on full screen
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(binding.getRoot());
 
        // expandableListView = findViewById(R.id.elvMobiles);
@@ -78,17 +88,28 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, MainActivitySteppers.class);
                 startActivity(intent);
             }
+            else if ("Animation Left To Right".equals(selected))
+            {
+                Intent intent = new Intent(this, RecyclerViewWithAnimationLeftToRightActivity.class);
+                startActivity(intent);
+            }
+            else if ("Basic".equals(selected))
+            {
+                Intent intent = new Intent(this, BasicRecyclerViewActivity.class);
+                startActivity(intent);
+            }
             return true;
         });
     }
+
     //endregion
 
     //region methods
     private void createCollection() {
         String[] bottomNavigationSub = {"Basic Bottom Navigation Activity"};
         String[] bottomSheetSub = {"Basic Bottom Sheet Dialog","Map Bottom Sheet Dialog"};
-        //String[] bottomSheetSub2 = {"Map Bottom Sheet Dialog"};
         String[] steppersSub = {"Wizard Color"};
+        String[] RecyclerView = {"Animation Left To Right","Basic"};
         mobileCollection = new HashMap<>();
 
         for (String group : groupList) {
@@ -102,6 +123,10 @@ public class MainActivity extends AppCompatActivity {
             else if (group.equals("Steppers"))
             {
                 loadChild(steppersSub);
+            }
+            else if (group.equals("Recycler View"))
+            {
+                loadChild(RecyclerView);
             }
 
             mobileCollection.put(group, childList);
@@ -123,6 +148,22 @@ public class MainActivity extends AppCompatActivity {
         groupList.add("Bottom Navigation");
         groupList.add("Bottom Sheet");
         groupList.add("Steppers");
+        groupList.add("Recycler View");
+    }
+
+
+    private void saveThemeStatePref(boolean isDark) {
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPref",MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean("isDark",isDark);
+        editor.commit();
+    }
+
+    private boolean getThemeStatePref() {
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPref",MODE_PRIVATE);
+        boolean isDark = pref.getBoolean("isDark",false) ;
+        return isDark;
     }
     //endregion
 }

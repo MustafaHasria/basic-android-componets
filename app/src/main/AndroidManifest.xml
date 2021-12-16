@@ -9,6 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BasicAndroidComponents">
+
+        <activity
+            android:name=".models.recyclerview.BasicRecyclerViewActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".models.recyclerview.RecyclerViewWithAnimationLeftToRightActivity"
+            android:exported="true" />
         <activity
             android:name=".models.steppers.MainScreen"
             android:exported="true" />
