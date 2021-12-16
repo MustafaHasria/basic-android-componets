@@ -1,6 +1,6 @@
 package com.example.basicandroidcomponents.models.fragment.model;
 
-public class PersonInformation {
+public class PersonInformationModel {
     //region Property
     private String name;
     private String description;
@@ -9,7 +9,7 @@ public class PersonInformation {
     //endregion
 
     //region Constructors
-    public PersonInformation(String name, String description, int backgroundPictureProfile, int pictureProfile) {
+    public PersonInformationModel(String name, String description, int backgroundPictureProfile, int pictureProfile) {
         this.name = name;
         this.description = description;
         this.backgroundPictureProfile = backgroundPictureProfile;

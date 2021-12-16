@@ -14,21 +14,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.basicandroidcomponents.R;
-import com.example.basicandroidcomponents.models.fragment.model.PersonInformation;
+import com.example.basicandroidcomponents.models.fragment.model.PersonInformationModel;
 
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     //region Variable
-    private List<PersonInformation> personInformations;
+    private List<PersonInformationModel> personInformationModels;
     Context mContext;
     RecyclerViewAdapterClickListener recyclerViewAdapterClickListener;
     //endregion
 
     //region Constructor
-    public RecyclerViewAdapter(List<PersonInformation> personInformations, Context mContext, RecyclerViewAdapterClickListener recyclerViewAdapterClickListener) {
-        this.personInformations = personInformations;
+    public RecyclerViewAdapter(List<PersonInformationModel> personInformationModels, Context mContext, RecyclerViewAdapterClickListener recyclerViewAdapterClickListener) {
+        this.personInformationModels = personInformationModels;
         this.mContext = mContext;
         this.recyclerViewAdapterClickListener=recyclerViewAdapterClickListener;
     }
@@ -50,21 +50,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.recyclerItemButtonShowProfile.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.left_to_right_animtion_recycler_view));
         holder.recyclerItemTextViewName.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.left_to_right_animtion_recycler_view));
         holder.recyclerItemImageViewPictureProfile.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.left_to_right_animtion_recycler_view));
-        holder.recyclerItemImageViewBackgroundPictureProfile.setImageResource(personInformations.get(position).getBackgroundPictureProfile());
-        holder.recyclerItemImageViewPictureProfile.setImageResource(personInformations.get(position).getPictureProfile());
-        holder.recyclerItemTextViewName.setText(personInformations.get(position).getName());
+        holder.recyclerItemImageViewBackgroundPictureProfile.setImageResource(personInformationModels.get(position).getBackgroundPictureProfile());
+        holder.recyclerItemImageViewPictureProfile.setImageResource(personInformationModels.get(position).getPictureProfile());
+        holder.recyclerItemTextViewName.setText(personInformationModels.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return personInformations.size();
+        return personInformationModels.size();
     }
 
     //endregion
 
     //region Interface
     public interface RecyclerViewAdapterClickListener{
-        void onItemToRecyclerViewButtonShowProfileClickListener(int position,PersonInformation personInformations);
+        void onItemToRecyclerViewButtonShowProfileClickListener(int position, PersonInformationModel personInformationsModel);
     }
     //endregion
 
@@ -89,7 +89,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         @Override
         public void onClick(View view) {
-            recyclerViewAdapterClickListener.onItemToRecyclerViewButtonShowProfileClickListener(getAdapterPosition(),personInformations.get(getAdapterPosition()));
+            recyclerViewAdapterClickListener.onItemToRecyclerViewButtonShowProfileClickListener(getAdapterPosition(), personInformationModels.get(getAdapterPosition()));
         }
     }
     //endregion

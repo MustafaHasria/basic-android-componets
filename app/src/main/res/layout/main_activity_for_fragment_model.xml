@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/product_sans_regular"
         android:textSize="18sp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:textColor="@color/black"
         android:paddingBottom="10dp"/>
 

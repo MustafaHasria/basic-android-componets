@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@+id/first_fragment_in_fragment_model_linear"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/first_fragment_in_fragment_model_linear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".models.fragment.FirstFragment"
-    xmlns:tools="http://schemas.android.com/tools">
+    tools:context=".models.fragment.FirstFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/first_fragment_in_fragment_model_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/item_for_recycler_view_to_fragment_model" />
 
 </LinearLayout>
