@@ -95,7 +95,8 @@ public class FirstFragment extends Fragment implements RecyclerViewAdapter.Recyc
 
         secondFragment.setArguments(bundle);
         getActivity().getSupportFragmentManager()
-                .beginTransaction()
+                .beginTransaction().addToBackStack(FirstFragment.class.getSimpleName())
+                .addToBackStack(FirstFragment.class.getSimpleName())
                 .add(R.id.main_activity_for_fragment_model_frame_layout, secondFragment)
                 .commit();
     }

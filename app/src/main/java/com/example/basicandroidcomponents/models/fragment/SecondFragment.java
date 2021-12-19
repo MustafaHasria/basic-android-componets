@@ -27,7 +27,9 @@ public class SecondFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.second_fragment_in_fragment_model, container, false);
+
         ((MainActivityFragment)getActivity()).mainActivityForFragmentModelTextView.setVisibility(View.GONE);
+
         secondFragmentImageViewPersonPicture = view.findViewById(R.id.second_fragment_in_fragment_model_image_view_person_picture);
         secondFragmentTextViewName = view.findViewById(R.id.second_fragment_in_fragment_model_text_view_name);
         secondFragmentTextViewDescription = view.findViewById(R.id.second_fragment_in_fragment_model_text_view_description);
